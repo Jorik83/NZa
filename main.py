@@ -1,6 +1,4 @@
 # Auteur: Jorik de Graaf
-# port 3306
-# x protocol port 33060
 
 import zeep
 import mysql.connector
@@ -10,6 +8,7 @@ import os
 # load .env file
 load_dotenv()
 
+# Connector
 conn = mysql.connector.connect(
     host=os.getenv("host"),
     user=os.getenv("user"),
