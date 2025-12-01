@@ -31,9 +31,9 @@ docker run -d -p 3306:3306 \
 ## Hier maak je een Docker container aan om een MySQL database in te runnen. Daar maak je een tabel aan om de data in te laden. 
 
  1. Run bovenstaande Docker code snippet voor aanmaken container
- 2. Connect naar container:
+ 2. Connect naar container:  
      docker exec -it mysql-docker-container mysql -u gebruikersnaam -p
- 3. Maak tabel aan
+ 3. Maak tabel aan:  
      CREATE TABLE countries (name VARCHAR(200), iso_code VARCHAR(10));
 
 ## Python:
@@ -43,16 +43,16 @@ NB Het Python script maakt gebruik van een .env file waarin de credentials staan
 1. Run main.py
 
 ## SQL
-## De eerste tien landen toon je middels een SQL query. Eerst noet echter de container worden geladen.
+## De eerste tien landen toon je middels een SQL query. Eerst laad, start en open je de Docker container.
 
 1. Plaats het .tar file in een map
-2. Laad het .tar file
+2. Laad het .tar file:  
     docker load -i C:\testmap\my-mysql-image.tar
-3. Run de container
+3. Run de container:  
      docker run -d -p 3306:3306 --name mysql-docker-container my-mysql-image
-4. Open de Docker container:
+4. Open de Docker container:  
     docker exec -it mysql-docker-container mysql -u gebruikersnaam -p
-5. gebruik de juiste database:
+5. gebruik de juiste database:  
     use codetest;
-6. Voer de SQL query uit:
+6. Voer de SQL query uit:  
    select * from countries order by name limit 10;
