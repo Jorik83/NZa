@@ -43,11 +43,16 @@ NB Het Python script maakt gebruik van een .env file waarin de credentials staan
 1. Run main.py
 
 ## SQL
-## De eerste tien landen toon je middels een SQL query.
+## De eerste tien landen toon je middels een SQL query. Eerst noet echter de container worden geladen.
 
-1. Open de Docker container:
+1. Plaats het .tar file in een map
+2. Laad het .tar file
+    docker load -i C:\testmap\my-mysql-image.tar
+3. Run de container
+     docker run -d -p 3306:3306 --name mysql-docker-container my-mysql-image
+4. Open de Docker container:
     docker exec -it mysql-docker-container mysql -u gebruikersnaam -p
-2. gebruik de juiste database:
+5. gebruik de juiste database:
     use codetest;
-3. Voer de SQL query uit:
-   select * from countries limit 10;
+6. Voer de SQL query uit:
+   select * from countries order by name limit 10;
