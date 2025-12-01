@@ -1,5 +1,5 @@
-####################
 Auteur: Jorik de Graaf
+
 Datum: 01-12-2025
 
 Betreft: Python coding assignment voor de NZA
@@ -25,11 +25,10 @@ docker run -d -p 3306:3306 \
  mysql/mysql-server:latest
 
 
-####################
- ## Processtappen ##
+# Processtappen 
 
 ## Docker:
-# Hier maak je een Docker container aan om een MySQL database in te runnen. Hier maak je een tabel aan om de data in te laden. 
+## Hier maak je een Docker container aan om een MySQL database in te runnen. Daar maak je een tabel aan om de data in te laden. 
 
  1. Run bovenstaande Docker code snippet voor aanmaken container
  2. Connect naar container:
@@ -38,13 +37,13 @@ docker run -d -p 3306:3306 \
      CREATE TABLE countries (name VARCHAR(200), iso_code VARCHAR(10));
 
 ## Python:
-# Dit Python script connect naar de SOAP, haalt de data op, doet een cleanse en schrijft de data weg in de MySQL database in de Docker container
-# NB Het Python script maakt gebruik van een .env file waarin de credentials staan. De .env zit in .gitignore dus is niet zichtbaar in Git. Niet echt nodig want ze staan ook hierboven, maar is toch goede practice :)
+## Dit Python script connect naar de SOAP, haalt de data op, doet een cleanse en schrijft de data weg in de MySQL database in de Docker container
+NB Het Python script maakt gebruik van een .env file waarin de credentials staan. De .env zit in .gitignore dus is niet zichtbaar in Git. Niet echt nodig want ze staan ook hierboven, maar is toch goede practice :)
 
 1. Run main.py
 
 ## SQL
-# De eerste tien landen toon je middels een SQL query.
+## De eerste tien landen toon je middels een SQL query.
 
 1. Open de Docker container:
     docker exec -it mysql-docker-container mysql -u gebruikersnaam -p
