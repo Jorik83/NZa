@@ -5,15 +5,16 @@ import mysql.connector
 from dotenv import load_dotenv
 import os
 
-# load .env file
+# laad .env file
 load_dotenv()
 
 # Connector
 conn = mysql.connector.connect(
-    host=os.getenv("host"),
-    user=os.getenv("user"),
-    password=os.getenv("password"),
-    database=os.getenv("database")
+    host=os.getenv("MYSQL_HOST"),
+    port=os.getenv("MYSQL_PORT"),
+    user=os.getenv("MYSQL_USER"),
+    password=os.getenv("MYSQL_PASSWORD"),
+    database=os.getenv("MYSQL_DATABASE")
 )
 
 # WSDL URL
@@ -31,7 +32,6 @@ for row in countries:
         continue
     else:
         row.sName = row.sName.replace('&','and').replace('And','and')
-        # print(row.sName, row.sISOCode)
 
 # Connect
 cursor = conn.cursor()
