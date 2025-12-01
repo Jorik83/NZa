@@ -1,14 +1,13 @@
 ####################
-## Auteur: Jorik de Graaf
-## Datum: 01-12-2025
+Auteur: Jorik de Graaf
+Datum: 01-12-2025
 
 Betreft: Python coding assignment voor de NZA
 
 ## Opdracht
-# Deze opdracht bestaat uit het ophalen van data van een publiek beschikbare SOAP service. In een aantal 
-# landen namen staat “&”, vervang dit door “and”. Sla de data vervolgens op in een lokale database (MySQL 
-# of Postgresql). Tenslotte toon de eerste 10 landen met hun bijbehorende landencodes (alfabetisch 
-# gesorteerd)
+Deze opdracht bestaat uit het ophalen van data van een publiek beschikbare SOAP service. In een aantal 
+landen namen staat “&”, vervang dit door “and”. Sla de data vervolgens op in een lokale database (MySQL 
+of Postgresql). Tenslotte toon de eerste 10 landen met hun bijbehorende landencodes (alfabetisch gesorteerd)
 
 ## Stappen: 
 1. Maak een tabel in je lokale database (MySQL of Postgresql) voor deze informatie, bij voorkeur in je python script
@@ -36,7 +35,7 @@ docker run -d -p 3306:3306 \
  2. Connect naar container:
      docker exec -it mysql-docker-container mysql -u gebruikersnaam -p
  3. Maak tabel aan
-     CREATE TABLE countries (iso_code VARCHAR(10), name VARCHAR(200));
+     CREATE TABLE countries (name VARCHAR(200), iso_code VARCHAR(10));
 
 ## Python:
 # Dit Python script connect naar de SOAP, haalt de data op, doet een cleanse en schrijft de data weg in de MySQL database in de Docker container
